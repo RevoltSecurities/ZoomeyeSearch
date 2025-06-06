@@ -1,0 +1,55 @@
+[project]
+name = "zoomeyesearch"
+version = "1.0.0"
+description = "A powerful CLI tool that uses ZoomEye to search exposed services, gather intelligence, and automate reconnaissance."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    { name = "D. Sanjai Kumar", email = "bughunterz0047@gmail.com" } 
+]
+maintainers = [
+    { name = "D. Sanjai Kumar", email = "bughunterz0047@gmail.com" }, { name = "Gokul.V", email = "th3gokul@gmail.com"}
+]
+requires-python = ">=3.13"
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "aiofiles>=24.1.0",
+    "appdirs>=1.4.4",
+    "art>=6.5",
+    "click>=8.2.1",
+    "colorama>=0.4.6",
+    "fake-useragent>=2.2.0",
+    "httpx>=0.28.1",
+    "playwright>=1.52.0",
+    "pyyaml>=6.0.2",
+    "rich>=14.0.0",
+]
+
+[project.scripts]
+zoomeyesearch = "zoomeyesearch.zoomeyesearch:main"
+
+[project.urls]
+Homepage = "https://github.com/RevoltSecurities/ZoomeyeSearch" 
+Documentation = "https://github.com/RevoltSecurities/ZoomeyeSearch/wiki"
+Repository = "https://github.com/RevoltSecurities/ZoomeyeSearch"
+Issues = "https://github.com/RevoltSecurities/ZoomeyeSearch/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["zoomeyesearch"]
+

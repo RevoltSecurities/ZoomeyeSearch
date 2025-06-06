@@ -1,0 +1,10 @@
+aiofiles>=24.1.0
+appdirs>=1.4.4
+art>=6.5
+click>=8.2.1
+colorama>=0.4.6
+fake-useragent>=2.2.0
+httpx>=0.28.1
+playwright>=1.52.0
+pyyaml>=6.0.2
+rich>=14.0.0
