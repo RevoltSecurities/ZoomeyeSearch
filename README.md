@@ -1,47 +1,78 @@
-# ZoomeyeSearch
-**A powerful CLI tool that uses zoomeyesearch to search exposed services, gather intelligence, and automate reconnaissance.**
+## ZoomeyeSearch - Unleash the Power of Reconnaissance
 
-![License](https://img.shields.io/github/license/RevoltSecurities/zoomeyesearch?style=flat-square)
-![Python](https://img.shields.io/badge/python-3.13+-blue.svg?style=flat-square)
-![zoomeyesearch API](https://img.shields.io/badge/zoomeye-API-green?style=flat-square)
+<h1 align="center">
+  <img src="img/zoomeyesearch.png" alt="ZoomeyeSearch" width="450px">
+  <br>
+</h1>
 
-## Features
-- Seamless authentication with zoomeyesearch credentials and API key
-- Search by:
-  - Domain, IP, CIDR, ASN, Organization
-  - Service, Product, Geolocation
-  - SSL Certificate, Favicon Hash and more
-- Support for facets, custom fields, pagination, and result limits
-- Save output to a file for offline analysis
-- Built-in updater to get the latest CLI version
+<div align="center">
 
+**A powerful CLI tool that uses ZoomEye to search exposed services, gather intelligence, and automate reconnaissance.**
 
+</div>
 
-## Installation
-```bash
-git clone https://github.com/RevoltSecurities/zoomeyesearch.git
-cd zoomeyesearch
-python3 -m venv zoomeyesearch-venv
-source zoomeyesearch-venv/bin/activate
-pip install .
-```
+<p align="center">
+  <a href="#features">Features</a> |
+  <a href="#usage">Usage</a> |
+  <a href="#installation">Installation</a> |
+  <a href="#available-modes">Available Modes</a>
+</p>
 
-## Quickstart
+<div align="center">
+  
+![GitHub last commit](https://img.shields.io/github/last-commit/RevoltSecurities/zoomeyesearch) 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/RevoltSecurities/zoomeyesearch) 
+[![GitHub license](https://img.shields.io/github/license/RevoltSecurities/zoomeyesearch)](https://github.com/RevoltSecurities/zoomeyesearch/blob/main/LICENSE)
 
-### Authenticate
-```bash
-zoomeyesearch auth
-```
-Enter your zoomeyesearch credentials and API key when prompted.
+</div>
 
-### Verify Login
-```bash
-zoomeyesearch login
-```
+ZoomEye is a powerful cybersecurity search engine that enables searching for exposed devices, services, and vulnerabilities. This CLI tool provides programmatic access to ZoomEye's capabilities for reconnaissance and threat intelligence.
+---
 
-## Usage
+### Features
+
+<h1 align="center">
+  <img src="https://via.placeholder.com/700x200?text=ZoomeyeSearch+Features" width="700px">
+  <br>
+</h1>
+
+- **Seamless Authentication**: Configure ZoomEye credentials and API key effortlessly.
+- **Versatile Search Options**: Query by Domain, IP, CIDR, ASN, Organization, Service, Product, and more.
+- **Advanced Filters**: Utilize facets, custom fields, pagination, and result limits.
+- **SSL & Favicon Search**: Perform advanced searches using SSL certificates and favicon hashes.
+- **Geolocation Support**: Search assets by country, city, or subdivision.
+- **Output Flexibility**: Save results to files for offline analysis in various formats.
+- **Built-in Updater**: Stay up-to-date with the latest CLI version.
+- **GPT Integration**: Access ZoomEye’s GPT features for enhanced querying.
+
+---
+
+### Usage
 
 ```code
+zoomeyesearch -h
+```
+
+```code
+ _____                                                  _____                                 __  
+/__  /  ____   ____    ____ ___   ___    __  __  ___   / ___/  ___   ____ _   _____  _____   / /_ 
+  / /  / __ \ / __ \  / __ `__ \ / _ \  / / / / / _ \  \__ \  / _ \ / __ `/  / ___/ / ___/  / __ \
+ / /__/ /_/ // /_/ / / / / / / //  __/ / /_/ / /  __/ ___/ / /  __// /_/ /  / /    / /__   / / / /
+/____/\____/ \____/ /_/ /_/ /_/ \___/  \__, /  \___/ /____/  \___/ \__,_/  /_/     \___/  /_/ /_/ 
+                                      /____/                                                      
+
+                     - RevoltSecurities
+
+╭───────────────────────╮
+│                       │
+│    ZOOMEYE 🔎 HELP    │
+│                       │
+╰───────────────────────╯
+DESCRIPTION
+
+ZoomEye is a powerful cybersecurity search engine that enables searching for exposed devices, services, and vulnerabilities.
+This CLI tool provides programmatic access to ZoomEye's capabilities for reconnaissance and threat intelligence.
+
 GLOBAL OPTIONS
 
 ┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -57,14 +88,14 @@ GLOBAL OPTIONS
 ├───────────────────┼─────────────────────────────────────────────────────┤
 │ -o, --output      │ Output file to save results                         │
 └───────────────────┴─────────────────────────────────────────────────────┘
-MODES (zoomeyesearch <global-options> <mode>)
+MODES (zoomeye <global-options> <mode>)
 
 ┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ Mode        ┃ Description                                                      ┃
 ┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│ auth        │ Configure and save your zoomeyesearch API key for authenticated access │
+│ auth        │ Configure and save your ZoomEye API key for authenticated access │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
-│ login       │ Verify your zoomeyesearch access level and API key validity            │
+│ login       │ Verify your ZoomEye access level and API key validity            │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
 │ asn         │ Search by Autonomous System Number (ASN)                         │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
@@ -90,15 +121,48 @@ MODES (zoomeyesearch <global-options> <mode>)
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
 │ stats       │ Get statistics for a specific field                              │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
-│ search      │ Perform a raw zoomeyesearch search query                               │
+│ search      │ Perform a raw ZoomEye search query                               │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
-│ gpt         │ Access zoomeyesearch GPT features                                      │
+│ gpt         │ Access ZoomEye GPT features                                      │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
-│ update      │ Check for updates to the zoomeyesearch CLI tool                  │
+│ update      │ Check for updates to the ZoomEyesearch CLI tool                  │
 └─────────────┴──────────────────────────────────────────────────────────────────┘
 USAGE
-zoomeyesearch <global-options> <mode> 
+zoomeye <global-options> <mode> 
+
 ```
+
+### Installation
+
+Ensure you have **Python 3.13 or later** installed before proceeding. Verify your Python version with:
+```bash
+python3 --version
+```
+
+#### ✅ **Install ZoomeyeSearch with uv** (Recommended)
+The easiest way to install ZoomeyeSearch is using `uv`:
+```bash
+uv tool install zoomeyesearch
+uv tool install playwright --force
+playwright install chromium
+```
+After installation, verify ZoomeyeSearch is installed correctly:
+```bash
+zoomeyesearch --help
+```
+
+## Quickstart
+### Authenticate
+```bash
+zoomeyesearch auth
+```
+Enter your zoomeyesearch credentials and API key when prompted.
+
+### Verify Login
+```bash
+zoomeyesearch login
+```
+
 
 ## Available Modes
 
@@ -295,13 +359,14 @@ zoomeyesearch product -pd nginx
 zoomeyesearch --max-page 3 product -pd "Apache httpd"
 ```
 
-## License
-This project is licensed under the [**MIT License**](https://github.com/RevoltSecurities/ZoomeyeSearch/blob/main/LICENSE).
+### Security
 
+ZoomeyeSearch is a safe and reliable tool designed for ethical cybersecurity research. It will not update automatically without user permission, ensuring full control over your environment. We welcome contributions from the community to enhance the tool’s capabilities. Report bugs or suggest features via [GitHub Issues](https://github.com/RevoltSecurities/zoomeyesearch/issues).
 
-## Credits & Contribution
-Built by **RevoltSecurities** with ❤️
-- Community contributions welcome.
-- Found a bug? Want a feature? [Open an issue](https://github.com/RevoltSecurities/zoomeyesearch/issues) or [PR](https://github.com/RevoltSecurities/zoomeyesearch/pulls).
+---
 
-If you love the tool, support it by giving a ⭐ on GitHub!
+### License
+
+ZoomeyeSearch is built by [RevoltSecurities](https://github.com/RevoltSecurities) with ❤️. We encourage community contributions to make ZoomeyeSearch even better. If you love the tool, support it by giving a ⭐ on [GitHub](https://github.com/RevoltSecurities/zoomeyesearch)!
+
+This project is licensed under the [MIT License](https://github.com/RevoltSecurities/zoomeyesearch/blob/main/LICENSE).
