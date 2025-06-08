@@ -1,17 +1,17 @@
-# zoomeyesearch
+# ZoomeyeSearch
 **A powerful CLI tool that uses zoomeyesearch to search exposed services, gather intelligence, and automate reconnaissance.**
 
 ![License](https://img.shields.io/github/license/RevoltSecurities/zoomeyesearch?style=flat-square)
 ![Python](https://img.shields.io/badge/python-3.13+-blue.svg?style=flat-square)
-![zoomeyesearch API](https://img.shields.io/badge/zoomeyesearch-API-green?style=flat-square)
+![zoomeyesearch API](https://img.shields.io/badge/zoomeye-API-green?style=flat-square)
 
 ## Features
 - Seamless authentication with zoomeyesearch credentials and API key
 - Search by:
-  - Domain, IP, CIDR, ASN, Organization, Service, Product
-  - Geolocation, SSL Certificate, Favicon Hash
+  - Domain, IP, CIDR, ASN, Organization
+  - Service, Product, Geolocation
+  - SSL Certificate, Favicon Hash and more
 - Support for facets, custom fields, pagination, and result limits
-- GPT-assisted queries (`gpt` mode)
 - Save output to a file for offline analysis
 - Built-in updater to get the latest CLI version
 
@@ -41,7 +41,7 @@ zoomeyesearch login
 
 ## Usage
 
-```
+```code
 GLOBAL OPTIONS
 
 ┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -295,11 +295,13 @@ zoomeyesearch product -pd nginx
 zoomeyesearch --max-page 3 product -pd "Apache httpd"
 ```
 
+## License
+This project is licensed under the [**MIT License**](https://github.com/RevoltSecurities/ZoomeyeSearch/blob/main/LICENSE).
+
+
 ## Credits & Contribution
 Built by **RevoltSecurities** with ❤️
 - Community contributions welcome.
 - Found a bug? Want a feature? [Open an issue](https://github.com/RevoltSecurities/zoomeyesearch/issues) or [PR](https://github.com/RevoltSecurities/zoomeyesearch/pulls).
 
 If you love the tool, support it by giving a ⭐ on GitHub!
-
-**"The more we share, the more we grow — let’s build a powerful security community together."**
