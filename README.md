@@ -1,13 +1,12 @@
-# ZoomeyeSearch
-**A powerful CLI tool that uses ZoomEye to search exposed services, gather intelligence, and automate reconnaissance.**
+# zoomeyesearch
+**A powerful CLI tool that uses zoomeyesearch to search exposed services, gather intelligence, and automate reconnaissance.**
 
-![License](https://img.shields.io/github/license/RevoltSecurities/ZoomeyeSearch?style=flat-square)
+![License](https://img.shields.io/github/license/RevoltSecurities/zoomeyesearch?style=flat-square)
 ![Python](https://img.shields.io/badge/python-3.13+-blue.svg?style=flat-square)
-![ZoomEye API](https://img.shields.io/badge/zoomeye-API-green?style=flat-square)
-
+![zoomeyesearch API](https://img.shields.io/badge/zoomeyesearch-API-green?style=flat-square)
 
 ## Features
-- Seamless authentication with ZoomEye credentials and API key
+- Seamless authentication with zoomeyesearch credentials and API key
 - Search by:
   - Domain, IP, CIDR, ASN, Organization, Service, Product
   - Geolocation, SSL Certificate, Favicon Hash
@@ -15,18 +14,17 @@
 - GPT-assisted queries (`gpt` mode)
 - Save output to a file for offline analysis
 - Built-in updater to get the latest CLI version
----
+
+
 
 ## Installation
 ```bash
-git clone https://github.com/RevoltSecurities/ZoomeyeSearch.git
-cd ZoomeyeSearch
-python3 -m venv zoomeye-venv
-source zoomeye-venv/bin/activate
+git clone https://github.com/RevoltSecurities/zoomeyesearch.git
+cd zoomeyesearch
+python3 -m venv zoomeyesearch-venv
+source zoomeyesearch-venv/bin/activate
 pip install .
 ```
-
----
 
 ## Quickstart
 
@@ -34,38 +32,16 @@ pip install .
 ```bash
 zoomeyesearch auth
 ```
-Enter your ZoomEye credentials and API key when prompted.
+Enter your zoomeyesearch credentials and API key when prompted.
 
 ### Verify Login
 ```bash
 zoomeyesearch login
 ```
 
----
-
 ## Usage
 
 ```
-(zoomeye-venv) pugal@ubuntu:~/tools/ZoomeyeSearch$ zoomeyesearch --help
-__  /                                               ___|                            |     
-   /    _ \    _ \   __ `__ \    _ \  |   |   _ \ \___ \    _ \   _` |   __|   __|  __ \  
-  /    (   |  (   |  |   |   |   __/  |   |   __/       |   __/  (   |  |     (     | | | 
-____| \___/  \___/  _|  _|  _| \___| \__, | \___| _____/  \___| \__,_| _|    \___| _| |_| 
-                                     ____/                                                
-
-                     - RevoltSecurities
-
-[20:50:09]  [WARN]: unable to get the latest version of zoomeyesearch
-╭───────────────────────╮
-│                       │
-│    ZOOMEYE 🔎 HELP    │
-│                       │
-╰───────────────────────╯
-DESCRIPTION
-
-ZoomEye is a powerful cybersecurity search engine that enables searching for exposed devices, services, and vulnerabilities.
-This CLI tool provides programmatic access to ZoomEye's capabilities for reconnaissance and threat intelligence.
-
 GLOBAL OPTIONS
 
 ┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -81,14 +57,14 @@ GLOBAL OPTIONS
 ├───────────────────┼─────────────────────────────────────────────────────┤
 │ -o, --output      │ Output file to save results                         │
 └───────────────────┴─────────────────────────────────────────────────────┘
-MODES (zoomeye <global-options> <mode>)
+MODES (zoomeyesearch <global-options> <mode>)
 
 ┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ Mode        ┃ Description                                                      ┃
 ┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│ auth        │ Configure and save your ZoomEye API key for authenticated access │
+│ auth        │ Configure and save your zoomeyesearch API key for authenticated access │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
-│ login       │ Verify your ZoomEye access level and API key validity            │
+│ login       │ Verify your zoomeyesearch access level and API key validity            │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
 │ asn         │ Search by Autonomous System Number (ASN)                         │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
@@ -114,34 +90,216 @@ MODES (zoomeye <global-options> <mode>)
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
 │ stats       │ Get statistics for a specific field                              │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
-│ search      │ Perform a raw ZoomEye search query                               │
+│ search      │ Perform a raw zoomeyesearch search query                               │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
-│ gpt         │ Access ZoomEye GPT features                                      │
+│ gpt         │ Access zoomeyesearch GPT features                                      │
 ├─────────────┼──────────────────────────────────────────────────────────────────┤
-│ update      │ Check for updates to the ZoomEyesearch CLI tool                  │
+│ update      │ Check for updates to the zoomeyesearch CLI tool                  │
 └─────────────┴──────────────────────────────────────────────────────────────────┘
 USAGE
-zoomeye <global-options> <mode> 
+zoomeyesearch <global-options> <mode> 
 ```
 
----
+## Available Modes
 
-## Example Usage
-
-```bash
-# Domain search
-zoomeyesearch domain -d hackerone.com
-
-# CIDR range search with output
-zoomeyesearch --output test.txt --limit 1000 cidr --cidr 8.8.8.0/24
-
-# Search IP with limit
-zoomeyesearch --limit 10 ip --ip 8.8.8.8
-
-# SSL certificate filter
-zoomeye ssl --subject-cn "example.com"
+### ASN
+**Search by Autonomous System Number (ASN) to find all assets belonging to a specific network.**
 ```
----
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag        ┃ Description                                                ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -asn, --asn │ The Autonomous System Number to search for (e.g., AS15169) │
+└─────────────┴────────────────────────────────────────────────────────────┘
 
-## Support Us
-**ZoomeyeSearch** is built by RevoltSecurities Team with ❤️ and your support will encourage us to improve the `ZoomeyeSearch` more and Community contributors are Welcome to contribute for `ZoomeyeSearch` and If you love the `ZoomeyeSearch` support it by giving a ⭐ .
+zoomeyesearch asn -asn 15169
+zoomeyesearch --fields ip,port,org asn -asn 15169 --limit 500
+```
+
+### IP
+**Search for information about a specific IP address in zoomeyesearch's database.**
+```
+┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag      ┃ Description                  ┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -ip, --ip │ The IP address to search for │
+└───────────┴──────────────────────────────┘
+
+zoomeyesearch ip -ip 8.8.8.8
+zoomeyesearch --fields port,service,product ip -ip 1.1.1.1
+```
+
+### Domain
+**Search for assets associated with a specific domain name.**
+```
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag         ┃ Description                   ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -d, --domain │ The domain name to search for │
+└──────────────┴───────────────────────────────┘
+
+zoomeyesearch domain -d hackerone.com 
+zoomeyesearch --limit 10 domain -d google.com
+```
+
+### Org
+**Search for assets belonging to a specific organization.**
+```
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag        ┃ Description                         ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -org, --org │ The organization name to search for │
+└─────────────┴─────────────────────────────────────┘
+
+zoomeyesearch org -org "Google LLC"
+zoomeyesearch --max-page 10 org -org "Amazon"
+```
+
+### CIDR
+**Search for assets within a specific CIDR range.**
+```
+┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag          ┃ Description                                     ┃
+┡━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -cidr, --cidr │ The CIDR range to search (e.g., 192.168.1.0/24) │
+└───────────────┴─────────────────────────────────────────────────┘
+
+zoomeyesearch cidr --cidr 192.168.1.0/24
+zoomeyesearch --limit 1000 cidr --cidr 8.8.8.0/24
+```
+
+### Service
+**Search for assets running a specific service.**
+```
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag           ┃ Description                                             ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -sV, --service │ The service name to search for (e.g., http, ssh, mysql) │
+└────────────────┴─────────────────────────────────────────────────────────┘
+
+zoomeyesearch service -sV http
+zoomeyesearch --facet country,org service -sV ssh
+```
+
+### Domains / Subdomains
+**Discover subdomains or associated domains for a target domain.**
+```
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag                     ┃ Description                                         ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -d, --domain             │ The domain to enumerate                             │
+│ -as, --associated-domain │ Search for associated domains instead of subdomains │
+│ -sub, --subdomain        │ Search for subdomains (default)                     │
+└──────────────────────────┴─────────────────────────────────────────────────────┘
+
+zoomeyesearch enumerate -d example.com
+zoomeyesearch enumerate -d example.com --associated-domain
+zoomeyesearch enumerate -d example.com --subdomain
+```
+
+### SSL
+**Advanced search using SSL certificate attributes.**
+```
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag             ┃ Description                                    ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ --ssl            │ Search by SSL certificate subject or issuer    │
+│ --fingerprint    │ SSL certificate fingerprint (SHA-1)            │
+│ --chain-count    │ Number of certificates in the chain            │
+│ --alg            │ Certificate algorithm (e.g., RSA, ECDSA)       │
+│ --issuer-cn      │ Issuer Common Name (e.g., 'Let's Encrypt')     │
+│ --rsa-bits       │ RSA key size in bits (e.g., 2048, 4096)        │
+│ --ecdsa-bits     │ ECDSA key size in bits (e.g., 256, 384)        │
+│ --pubkey-type    │ Public key type (rsa/ecdsa/dsa)                │
+│ --serial         │ Certificate serial number                      │
+│ --cipher-bits    │ TLS cipher strength in bits                    │
+│ --cipher-name    │ TLS cipher name (e.g., 'AES256-GCM-SHA384')    │
+│ --cipher-version │ TLS cipher version                             │
+│ --ssl-version    │ SSL/TLS version (e.g., TLSv1.2, TLSv1.3)       │
+│ --subject-cn     │ Subject Common Name (target domain)            │
+│ --jarm           │ JARM fingerprint for TLS server identification │
+│ --ja3s           │ JA3S fingerprint for TLS client identification │
+│ -h, --help       │ Show this help message                         │
+└──────────────────┴────────────────────────────────────────────────┘
+
+zoomeyesearch ssl --jarm 1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d
+zoomeyesearch ssl --subject-cn "example.com"
+zoomeyesearch ssl --fingerprint abc123def456
+```
+
+### Favicon
+**Search for assets using a specific favicon hash.**
+```
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag                 ┃ Description                    ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -hash, --faviconhash │ The favicon hash to search for │
+└──────────────────────┴────────────────────────────────┘
+
+zoomeyesearch faviconhash -hash -1234567890
+zoomeyesearch --fields ip,port,title faviconhash -hash 1234567890 
+```
+
+### Search
+**Perform a raw search query using zoomeyesearch's search syntax.**
+```
+┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag          ┃ Description                     ┃
+┡━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -sc, --search │ The raw search query to execute │
+└───────────────┴─────────────────────────────────┘
+
+zoomeyesearch search -sc "country:CN"
+zoomeyesearch --limit 5000 search -sc "os:linux"
+```
+
+### Stats
+**Get statistics for a specific field in the results of a query.**
+```
+┏━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag    ┃ Description                          ┃
+┡━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ --query │ The search query to analyze          │
+│ --field │ The field to generate statistics for │
+└─────────┴──────────────────────────────────────┘
+
+zoomeyesearch stats --query "product:nginx" --field country
+zoomeyesearch stats --query "service:http" --field org
+```
+
+### Geosearch
+**Search for assets in specific geographic locations.**
+```
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag                        ┃ Description                    ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -country, --country         │ Search by country name or code │
+│ -city, --city               │ Search by city name            │
+│ -subdivision, --subdivision │ Search by state/province name  │
+└─────────────────────────────┴────────────────────────────────┘
+
+zoomeyesearch geosearch --country US
+zoomeyesearch geosearch --country CN --city Beijing
+zoomeyesearch --max-page 10 geosearch --subdivision California
+```
+
+### Product
+**Search for assets running a specific product.**
+```
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Flag           ┃ Description                                                 ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ -pd, --product │ The product name to search for (e.g., nginx, apache, mysql) │
+└────────────────┴─────────────────────────────────────────────────────────────┘
+
+zoomeyesearch product -pd nginx
+zoomeyesearch --max-page 3 product -pd "Apache httpd"
+```
+
+## Credits & Contribution
+Built by **RevoltSecurities** with ❤️
+- Community contributions welcome.
+- Found a bug? Want a feature? [Open an issue](https://github.com/RevoltSecurities/zoomeyesearch/issues) or [PR](https://github.com/RevoltSecurities/zoomeyesearch/pulls).
+
+If you love the tool, support it by giving a ⭐ on GitHub!
+
+**"The more we share, the more we grow — let’s build a powerful security community together."**
