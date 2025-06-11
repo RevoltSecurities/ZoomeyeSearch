@@ -1,32 +1,37 @@
-
 name: Manual Test Release to TestPyPI with uv (Token Auth)
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # This makes the workflow manually triggerable from the GitHub Actions tab
 
 jobs:
   test_deploy:
     runs-on: ubuntu-latest
     environment:
-      name: test-pypi
-      url: https://test.pypi.org/project/${{ github.repository }} 
+      name: test-pypi # Dedicated environment for TestPyPI, good for tracking and protection
+      url: https://test.pypi.org/project/${{ github.repository }} # Link to your TestPyPI project
 
+    # permissions:
+    #   id-token: write # Not strictly needed if only using a direct token (PYPI_TEST_TOKEN),
+                       # but harmless to keep if you might switch to trusted publishing later.
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install uv
-        run: curl -LsSf https://astral.sh/uv/install.sh | sh
-        env:
-          PATH: ~/.cargo/bin:$PATH 
-
       - name: Set up Python Environment
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13.3'
+          python-version: '3.13.3' # Using your specified Python version
+
+      - name: Install uv via pip
+        run: pip install uv
+        # This replaces the curl | sh command with a standard pip installation,
+        # which is more robust within the GitHub Actions Python environment.
+
       - name: Build Source and Wheel Distributions with uv
         run: uv build --sdist --wheel --out-dir dist
+        # uv builds your sdist and wheel files in the 'dist' directory, using pyproject.toml.
 
       - name: Publish to TestPyPI using uv with Token
         run: uv publish --publish-url https://test.pypi.org/legacy/ --token ${{ secrets.PYPI_TEST_TOKEN }}
+        # Publishes the built distributions to TestPyPI using the provided API token.
