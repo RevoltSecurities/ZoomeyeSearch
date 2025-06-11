@@ -22,7 +22,7 @@
   
 ![GitHub last commit](https://img.shields.io/github/last-commit/RevoltSecurities/zoomeyesearch) 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/RevoltSecurities/zoomeyesearch) 
-[![GitHub license](https://img.shields.io/github/license/RevoltSecurities/zoomeyesearch)](https://github.com/RevoltSecurities/zoomeyesearch/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/RevoltSecurities/ZoomeyeSearch)](https://github.com/RevoltSecurities/ZoomeyeSearch/blob/main/LICENSE)
 
 </div>
 
