@@ -1,11 +1,11 @@
 [project]
 name = "zoomeyesearch"
-version = "0.0.0"
+version = "1.0.0"
 description = "A powerful CLI tool that uses ZoomEye to search exposed services, gather intelligence, and automate reconnaissance."
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    { name = "D. Sanjai Kumar", email = "bughunterz0047@gmail.com" } 
+    { name = "D. Sanjai Kumar", email = "bughunterz0047@gmail.com" } , { name = "Gokul.V", email = "th3gokul@gmail.com"}
 ]
 maintainers = [
     { name = "D. Sanjai Kumar", email = "bughunterz0047@gmail.com" }, { name = "Gokul.V", email = "th3gokul@gmail.com"}
