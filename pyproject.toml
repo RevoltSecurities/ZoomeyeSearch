@@ -1,6 +1,6 @@
 [project]
 name = "zoomeyesearch"
-version = "1.0.0"
+version = "0.0.0"
 description = "A powerful CLI tool that uses ZoomEye to search exposed services, gather intelligence, and automate reconnaissance."
 readme = "README.md"
 license = {text = "MIT"}
