@@ -1,7 +1,7 @@
 ## ZoomeyeSearch - Unleash the Power of Reconnaissance
 
 <h1 align="center">
-  <img src="img/zoomeyesearch.png" alt="ZoomeyeSearch" width="450px">
+  <img src="static/zoomeye-logo.png" alt="ZoomeyeSearch" width="550px" height="100%">
   <br>
 </h1>
 
